@@ -28,8 +28,27 @@ public class FXMLController {
 
     @FXML
     void doCalcolaConfini(ActionEvent event) {
-
+    	
+    	String input = this.txtAnno.getText();
+    	int inputNum;
+    	
+    	try {
+    		inputNum = Integer.parseInt(input);
+    	}catch(NumberFormatException e ) {
+    		this.txtResult.setText("Inserire un numero!");
+    		return;
+    	}
+    	
+    	if(inputNum < 1816 || inputNum > 2016) {
+    		this.txtResult.setText("Inserire un anno compreso tra 1816 e 2016!");
+    		return;
+    	}
+    	
+    	model.creaGrafo(inputNum);
+    	this.txtResult.setText(model.elencoStatiConNumeroStatiConfinanti(inputNum));
     }
+    
+    
 
     @FXML // This method is called by the FXMLLoader when initialization is complete
     void initialize() {
