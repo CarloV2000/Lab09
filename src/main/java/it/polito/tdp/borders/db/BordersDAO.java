@@ -78,4 +78,25 @@ public class BordersDAO {
 	}
 	
 	
-}
+	/*public void trovaConfinantiDAO(Country c) {
+		String sql = "";
+		List<Border>allBorders = new ArrayList<Border>();
+		try {
+			Connection conn = ConnectDB.getConnection();
+			PreparedStatement st = conn.prepareStatement(sql);
+			//st.setInt(1, anno);
+			ResultSet rs = st.executeQuery();
+
+			while (rs.next()) {
+			
+			}
+			
+			conn.close();
+			return ;
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+			System.out.println("Errore connessione al database");
+			throw new RuntimeException("Error Connection Database");
+		}*/
+	}
