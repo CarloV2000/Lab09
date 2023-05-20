@@ -49,7 +49,7 @@ public class BordersDAO {
 		
 		String sql = "SELECT state1no, state2no "
 				+ "FROM contiguity c "
-				+ "WHERE c.year <= ? ";
+				+ "WHERE c.conttype = 1 AND c.year <= ? ";
 		List<Border>allBorders = new ArrayList<Border>();
 		try {
 			Connection conn = ConnectDB.getConnection();

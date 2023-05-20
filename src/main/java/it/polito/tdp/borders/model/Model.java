@@ -21,12 +21,11 @@ public class Model {
 	private Map<Integer, Country>countryIdMap;
 	private List<Country>countries;
 	private BordersDAO dao;
-	private List<Country> adiacenze;
+	
 
 	public Model() {
 		dao = new BordersDAO();
 		countries = dao.loadAllCountries();
-		adiacenze = new ArrayList<Country>();
 	}
 
 	public void creaGrafo(int anno) {
@@ -103,7 +102,7 @@ public class Model {
 	
 	
 	/**
-	 * viene visualizzata la lista di tutti i nodi raggiungibili nel grafo
+	 * viene visualizzata la lista di tutti i vertici raggiungibili nel grafo
 	a partire da un vertice selezionato, che coincide con la componente connessa del grafo relativa allo stato
 	scelto (ho usato il metodo Graphs.neighborListOf(grafo, vertice) per trovare tutti i confinanti).
 	 * @param c è il (Country) di cui voglio sapere i confinanti
